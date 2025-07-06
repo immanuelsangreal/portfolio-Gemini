@@ -219,3 +219,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+$(document).ready(function() {
+    // --- Popup --- //
+    // When a trigger is clicked, open the model
+    $(".popup-trigger").on('click', function(e) {
+        e.preventDefault(); // Prevents the link from trying to navigate
+        $(".custom-model-main").addClass('model-open');
+    });
+
+    // When the close button or background is clicked, close the model
+    $(".close-btn, .bg-overlay").click(function() {
+        $(".custom-model-main").removeClass('model-open');
+    });
+
+    // --- Initialize Nice Select for the custom dropdown --- //
+    // This makes the dropdown in your form look and work correctly.
+    if ($('.nice-select').length) {
+        $('.nice-select').niceSelect();
+    }
+});
